@@ -1,0 +1,37 @@
+<h2>{{ isEditMode ? 'Edit Employee' : 'Add Employee' }}</h2>
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+  <div>
+    <label for="contactNumber">Contact Number</label>
+    <input type="text" id="contactNumber" formControlName="contactNumber">
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email">
+  </div>
+  <div>
+    <label>Gender</label>
+    <label><input type="radio" formControlName="gender" value="Male"> Male</label>
+    <label><input type="radio" formControlName="gender" value="Female"> Female</label>
+  </div>
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i">
+      <label for="skillName">Skill Name</label>
+      <input type="text" id="skillName" formControlName="name">
+      <label for="experience">Experience</label>
+      <select id="experience" formControlName="experience">
+        <option value="">Select Experience</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Expert">Expert</option>
+      </select>
+      <button type="button" (click)="deleteSkill(i)" [disabled]="skills.length === 1">Delete</button>
+    </div>
+  </div>
+  <button type="button" (click)="addSkill()">Add Skill</button>
+  <button type="submit">{{ isEditMode ? 'Update' : 'Add' }}</button>
+</form>
