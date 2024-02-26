@@ -38,6 +38,7 @@ export class EmployeeAddEditComponent implements OnInit {
 
   initForm(employee: Employee | undefined): void {
     this.employeeForm = this.formBuilder.group({
+      employeeId: [employee ? employee.employeeId : '', Validators.required],
       name: [employee ? employee.name : '', Validators.required],
       contactNumber: [employee ? employee.contactNumber : '', Validators.required],
       email: [employee ? employee.email : '', [Validators.required, Validators.email]],

@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+   
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 25px 0 5px;
+}
+
+.column {
+    flex: 1;
+    margin-right: 50px;
+    // margin-bottom: 20px;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+// label {
+//     margin-bottom: 20px;
+// }
+
+.form-group input[type="text"],.form-group input[type="tel"],.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="radio"] {
+    margin-top: 5px;
+}
+
+.skill-inputs {
+    // width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.skill-inputs input[type="text"] {
+    margin-right: 20px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    
+    padding: 8px;
+    border-radius: 3px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.green {
+    margin-bottom: 10px;
+    background-color: #38963b;
+}
+
+.green:hover {
+    background-color: #2f7d2f;
+}
+
+.blue {
+    background-color: #007bff;
+}
+
+.blue:hover {
+    background-color: #0056b3;
+}
+
+.delBtn {
+    margin: 15px 0 10px 50px;
+    border:none;
+    color: white;
+    border: 25px;
+    background-color: red;
+    cursor: pointer;
+}
