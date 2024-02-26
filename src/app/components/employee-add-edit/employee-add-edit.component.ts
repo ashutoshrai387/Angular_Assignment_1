@@ -7,7 +7,7 @@ import { EmployeeService } from '../../services/employee.service';
 @Component({
   selector: 'app-employee-add-edit',
   templateUrl: './employee-add-edit.component.html',
-  styleUrls: ['./employee-add-edit.component.css']
+  styleUrls: ['./employee-add-edit.component.scss']
 })
 export class EmployeeAddEditComponent implements OnInit {
   employeeForm!: FormGroup ;
