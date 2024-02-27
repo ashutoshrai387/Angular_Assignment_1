@@ -1,52 +1,57 @@
-/* Table styles */
+ /* styles for heading and add employee button */
+.header {
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .addEmp {
+        float: right;
+        margin-bottom: 10px;
+        padding: 8px;
+        border-radius: 3px;
+        background-color: #38963b;
+        color: white;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #2f7d2f;
+        }
+    }
+}
+
+/* styles for table */
 table {
-    width: 100%; 
-    border-collapse: collapse; 
-    margin-top: 20px; 
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    th,
+    td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        word-wrap: break-word;
+        max-width: 150px;
+    }
+
+    th {
+        background-color: #ffffff;
+        border-top: 1px solid #ddd;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #f2f2f2;
+    }
+    
+    ol {
+        margin-left: -15px;
+    }
 }
 
-th,
-td {
-    padding: 8px; 
-    border-bottom: 1px solid #ddd; 
-    text-align: left; 
-    word-wrap: break-word; 
-    max-width: 150px; 
-}
-
-th {
-    background-color: #ffffff; 
-    border-top: 1px solid #ddd; 
-}
-table, th, td {
-    text-align: left;
-}
-
-tr:nth-child(odd) {
-    background-color: #f2f2f2;
-}  
-
-// ol {
-//     margin: 0;
-//     padding: 0;
-// }
-
-.addEmp {
-    float: right;
-    margin-bottom: 10px;
-    padding: 8px;
-    border-radius: 3px;
-    background-color: #38963b;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.editEmp, .delEmp {
+/* styles for edit and delete buttons */
+.editEmp,
+.delEmp {
     border: none;
     background-color: transparent;
-}
-
-.addEmp:hover {
-    background-color: #2f7d2f;
 }

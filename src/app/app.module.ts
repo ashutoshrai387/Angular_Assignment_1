@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeAddEditComponent } from './components/employee-add-edit/employee-add-edit.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,10 +19,13 @@ import { EmployeeAddEditComponent } from './components/employee-add-edit/employe
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync(),
   ],
   bootstrap: [AppComponent]
 })

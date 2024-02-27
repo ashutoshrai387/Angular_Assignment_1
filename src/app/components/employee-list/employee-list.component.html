@@ -1,8 +1,10 @@
+<!-- list of employees -->
 <div class="header">
 <h1>Employee List</h1>
 <button class="addEmp" routerLink="/employee/add">Add Employee</button>
 </div>
 <table>
+  <!-- table headers -->
   <thead>
     <tr>
       <th>Id</th>
@@ -14,6 +16,8 @@
       <th>Action</th>
     </tr>
   </thead>
+
+    <!-- table body with data -->
   <tbody>
     <tr *ngFor="let employee of employees">
       <td>{{ employee.employeeId }}</td>
@@ -22,6 +26,7 @@
       <td>{{ employee.contactNumber }}</td>
       <td>{{ employee.gender }}</td>
       <td>
+        <!-- displaying skills -->
         <ng-container *ngIf="employee.skills.length === 1; else multipleSkills">
           {{ employee.skills[0].name }}{{ employee.skills[0].experience ? ' (Exp. ' + employee.skills[0].experience + ')' : '' }}
         </ng-container>
@@ -31,6 +36,7 @@
           </ol>
         </ng-template>
       </td>
+      <!-- buttons for editing and deleting an employee -->
       <td>
         <button class="editEmp" (click)="editEmployee(employee.employeeId)"><i class="fa-solid fa-pen "></i></button>
         <button class="delEmp" (click)="deleteEmployee(employee.employeeId, employee.name)"><i class="fa-solid fa-trash " ></i></button>

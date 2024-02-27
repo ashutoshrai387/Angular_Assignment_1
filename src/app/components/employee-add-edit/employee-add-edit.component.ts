@@ -13,12 +13,13 @@ export class EmployeeAddEditComponent implements OnInit {
   employeeForm!: FormGroup ;
   isEditMode: boolean = false;
   employeeId: number | null = null;
+  messageElement: HTMLElement | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +37,7 @@ export class EmployeeAddEditComponent implements OnInit {
     });
   }
 
+  /* function to initialize the form */
   initForm(employee: Employee | undefined): void {
     this.employeeForm = this.formBuilder.group({
       employeeId: [employee ? employee.employeeId : '', Validators.required],
@@ -55,8 +57,10 @@ export class EmployeeAddEditComponent implements OnInit {
     }
   }
 
+  /* function to handle form submission */
   onSubmit(): void {
     if (this.employeeForm.invalid) {
+      alert('Please fillup all the fields.');
       return;
     }
     const employeeData: Employee = this.employeeForm.value;
@@ -71,10 +75,12 @@ export class EmployeeAddEditComponent implements OnInit {
     }
   }
 
+  /* getter for skills form array */
   get skills(): FormArray {
     return this.employeeForm.get('skills') as FormArray;
   }
 
+  /* function to add a new skill to the form */
   addSkill(skillName: string = '', experience: string = ''): void {
     this.skills.push(this.formBuilder.group({
       name: [skillName, Validators.required],
@@ -82,6 +88,7 @@ export class EmployeeAddEditComponent implements OnInit {
     }));
   }
 
+  /* function to delete a skill from the form */
   deleteSkill(index: number): void {
     this.skills.removeAt(index);
     if (this.skills.length === 1) {
